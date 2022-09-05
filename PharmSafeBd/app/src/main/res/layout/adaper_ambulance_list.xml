@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8"
+    android:layout_margin="10dp"
+    android:padding="25dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/layout_id"
+    >
+
+    <TextView
+        android:id="@+id/hospital_name_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorBlack"
+        android:textSize="25sp"
+        android:text="Hospital Name"
+        />
+    <TextView
+        android:id="@+id/hotline_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2E2E2E"
+        android:textSize="20sp"
+        android:text="Hotline : 01457545784"
+        />
+
+</LinearLayout>

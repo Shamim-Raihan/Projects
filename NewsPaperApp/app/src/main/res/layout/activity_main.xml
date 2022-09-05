@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.ui.MainActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/all_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="All"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/bangladesh_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="বাংলাদেশ"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/economics_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="অর্থনীতি"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/international_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="আন্তর্জাতিক"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/science_and_technology_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="বিজ্ঞান ও প্রযুক্তি"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/play_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="খেলা"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/health_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="স্বাস্থ্য"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/news_category_background_design"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_framelayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+            <include layout="@layout/shimmer_placeholder_layout"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:visibility="gone"
+        />
+</LinearLayout>

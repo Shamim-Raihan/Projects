@@ -1,0 +1,198 @@
+<resources>
+    <string name="app_name">PharmSafeBd</string>
+
+    <string-array name="group_list">
+        <item>Select Group</item>
+        <item>Aspirin</item>
+        <item>Amlodipine Besilate + Atenolol</item>
+        <item>Bilastine</item>
+        <item>Bisoprolol Hemifumarate</item>
+        <item>Calcium Carbonate</item>
+        <item>Cetirizine Hydrochloride</item>
+        <item>Calcium Lactate Gluconate + Calcium Carbonate + Vitamin C + Vitamin D3</item>
+        <item>Doxophylline</item>
+        <item>Domperidone Maleate</item>
+        <item>Ebastine</item>
+        <item>Fenofibrate</item>
+        <item>Fluconazole</item>
+        <item>Gliclazide</item>
+        <item>Hypromellose</item>
+        <item>Itraconazole</item>
+        <item>Lansoprazole</item>
+        <item>Omeprazole</item>
+        <item>Paracetamol</item>
+        <item>Vitamin C + Vitamin D3 + Folic Acid</item>
+        <item>Zafirlukast</item>
+    </string-array>
+
+
+    <string-array name="amlodipine_besilate_atenolol_medicine_list">
+        <item>Select Medicine</item>
+        <item>Amdocal Plus</item>
+        <item>Amdocal Plus</item>
+        <item>Camlodin Plus</item>
+        <item>Camlodin Plus</item>
+    </string-array>
+
+    <string-array name="aspirin_medicine_list">
+        <item>Select Medicine</item>
+        <item>Angin</item>
+        <item>Caid</item>
+        <item>Disprin</item>
+        <item>Ecosprin</item>
+        <item>Ecosprin</item>
+        <item>Erasprin</item>
+    </string-array>
+
+    <string-array name="bilastine_medicine_list">
+        <item>Select Medicine</item>
+        <item>Allertin</item>
+        <item>Belas</item>
+        <item>Bilan</item>
+        <item>Bilanex</item>
+        <item>Bilargo</item>
+        <item>Bilasi</item>
+    </string-array>
+
+    <string-array name="bisoprolol_hemifumarate_medicine_list">
+        <item>Select Medicine</item>
+        <item>Probis</item>
+        <item>Probis</item>
+        <item>Tenobis</item>
+        <item>Tenobis</item>
+    </string-array>
+
+    <string-array name="calcium_carbonate_medicine_list">
+        <item>Select Medicine</item>
+        <item>A-Cal</item>
+        <item>Acical JR</item>
+        <item>Aristocal</item>
+        <item>Bpcal</item>
+        <item>Cal</item>
+    </string-array>
+
+    <string-array name="cetirizine_hydrochloride_medicine_list">
+        <item>Select Medicine</item>
+        <item>Atrizin</item>
+        <item>Alatrol</item>
+        <item>Trizin</item>
+    </string-array>
+
+    <string-array name="calcium_lactate_gluconate_medicine_list">
+        <item>Select Medicine</item>
+        <item>Calbo Forte</item>
+        <item>Cavic-C Plus</item>
+    </string-array>
+
+    <string-array name="doxophylline_medicine_list">
+        <item>Select Medicine</item>
+        <item>Ascova</item>
+        <item>Ascova</item>
+        <item>Axofyl</item>
+        <item>Bredox</item>
+        <item>Brezofil</item>
+    </string-array>
+
+    <string-array name="domperidone_maleate_medicine_list">
+        <item>Select Medicine</item>
+        <item>Omidon</item>
+        <item>Motigut</item>
+        <item>Deflux</item>
+    </string-array>
+
+    <string-array name="ebastine_medicine_list">
+        <item>Select Medicine</item>
+        <item>Alestin</item>
+        <item>Ebahist</item>
+        <item>Ebamine</item>
+        <item>Ebanex</item>
+        <item>Ebaril</item>
+    </string-array>
+
+    <string-array name="fenofibrate_medicine_list">
+        <item>Select Medicine</item>
+        <item>Fenatrol</item>
+        <item>Fenobate</item>
+        <item>Fenocol</item>
+        <item>Fenolid</item>
+        <item>Fibre</item>
+    </string-array>
+
+    <string-array name="fluconazole_medicine_list">
+        <item>Select Medicine</item>
+        <item>Flugal</item>
+        <item>Flugal</item>
+        <item>Flugal</item>
+        <item>Conaz</item>
+        <item>Conaz</item>
+    </string-array>
+
+    <string-array name="gliclazide_medicine_list">
+        <item>Select Medicine</item>
+        <item>Admira</item>
+        <item>Claz</item>
+        <item>Comprid XR</item>
+        <item>Consucon</item>
+        <item>Consucon MR</item>
+    </string-array>
+
+    <string-array name="hypromellose_medicine_list">
+        <item>Select Medicine</item>
+        <item>Atier</item>
+        <item>Genagel</item>
+        <item>Hypose</item>
+        <item>Hyprogel</item>
+        <item>Iclear</item>
+    </string-array>
+
+    <string-array name="itraconazole_medicine_list">
+        <item>Select Medicine</item>
+        <item>Azonox</item>
+        <item>Iconal</item>
+        <item>Itracap</item>
+        <item>Itracon</item>
+        <item>Itrafun</item>
+    </string-array>
+
+    <string-array name="lansoprazole_medicine_list">
+        <item>Select Medicine</item>
+        <item>Enso</item>
+        <item>Lanozole</item>
+        <item>Lansec</item>
+        <item>Lansina</item>
+        <item>Lansodin</item>
+    </string-array>
+
+    <string-array name="omeprazole_medicine_list">
+        <item>Select Medicine</item>
+        <item>Seclo</item>
+        <item>Seclo</item>
+        <item>Cosec</item>
+        <item>Cosec</item>
+    </string-array>
+
+    <string-array name="paracetamol_medicine_list">
+        <item>Select Medicine</item>
+        <item>Fast</item>
+        <item>Fast XR</item>
+        <item>Ace</item>
+        <item>Ace XR</item>
+        <item>Napa</item>
+        <item>Napa Extend</item>
+    </string-array>
+
+    <string-array name="vitamin_c_vitamin_d3_folic_acid_medicine_list">
+        <item>Select Medicine</item>
+        <item>Cardivit</item>
+        <item>Calbo Forte</item>
+        <item>Cavic-C Plus</item>
+    </string-array>
+
+    <string-array name="zafirlukast_medicine_list">
+        <item>Select Medicine</item>
+        <item>Accolotate</item>
+        <item>Zafir</item>
+        <item>Zucast</item>
+    </string-array>
+
+</resources>

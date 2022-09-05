@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".view.ui.MedicineDetailsActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/medicine"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:id="@+id/medicine_details_medicine_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="medicine Name"
+            android:textColor="@color/textColorBlack"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:id="@+id/tablet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tablet"
+            android:textColor="@color/textColorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/medicine_details_medicine_group_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="group name"
+        android:textColor="#0C90F4"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/medicine_details_medicine_mg_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500 mg"
+        android:textColor="@color/textColorBlack"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/medicine_details_medicine_company_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="company name"
+        android:textColor="@color/textColorBlack"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/medicine_details_medicine_unit_price_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unit price:25 tk"
+            android:textColor="@color/textColorBlack"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/medicine_details_medicine_box_price_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="box price:250 tk"
+            android:textColor="@color/textColorBlack"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/medicine_details_medicine_power_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 mg"
+            android:textColor="@color/textColorBlack"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            />
+
+
+
+    <TextView
+        android:id="@+id/medicine_details_medicine_quatity_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity (unit)"
+        android:textColor="@color/textColorBlack"
+        android:textSize="14sp"
+        android:layout_marginTop="40dp"
+        />
+
+    <NumberPicker
+        android:id="@+id/medicine_details_medicine_quatity_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="@color/textColorBlack"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
+            />
+        <EditText
+            android:id="@+id/medicine_details_medicine_location_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your location"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/medicine_details_medicine_add_to_cart_btn_id"
+            android:text="Add to Cart"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"/>
+        <Button
+            android:id="@+id/medicine_details_medicine_order_now_btn_id"
+            android:text="Order now"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

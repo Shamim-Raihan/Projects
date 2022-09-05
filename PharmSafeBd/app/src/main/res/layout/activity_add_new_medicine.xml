@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    tools:context=".view.ui.AddNewMedicineActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Medicine Group"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <Spinner
+        android:id="@+id/add_new_medicine_medicine_group_id"
+        android:background="@drawable/spinner_background_design"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <TextView
+        android:id="@+id/add_new_medicine_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Medicine Name"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        />
+
+    <Spinner
+        android:id="@+id/add_new_medicine_medicine_name_id"
+        android:background="@drawable/spinner_background_design"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/add_new_medicine_power_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter company name"
+        android:layout_marginBottom="20dp"
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Name"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/add_new_medicine_company_name_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter company name"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicine price(Unit) TK"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/add_new_medicine_unit_price_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter medicine price (unit)"
+        android:layout_marginBottom="20dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicine price(Box) TK"
+        android:textColor="@color/textColorBlack"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/add_new_medicine_box_price_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter medicine price (Box)"
+        android:layout_marginBottom="50dp"
+
+        />
+
+    <Button
+        android:id="@+id/add_new_medicine_save_button_id"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_design"
+
+        />
+
+
+
+</LinearLayout>

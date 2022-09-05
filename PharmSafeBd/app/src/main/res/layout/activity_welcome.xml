@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    tools:context=".view.ui.WelcomeActivity">
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_default_monochrome_black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To PharmSafe BD"
+        android:textColor="@color/textColorBlack"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIFE SAFE"
+        android:textColor="@color/textColorBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"
+        />
+
+
+    <Button
+        android:id="@+id/client_btn_id"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Client"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_design"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/textColorBlack"
+        />
+
+    <Button
+        android:id="@+id/merchant_btn_id"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Merchant"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_design"
+        android:textColor="@color/textColorBlack"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="#252525"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/navigate_to_log_in_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="#0434BC"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
