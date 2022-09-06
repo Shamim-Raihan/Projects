@@ -59,7 +59,7 @@
         android:id="@+id/add_new_medicine_power_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter company name"
+        android:hint="Enter medicine power"
         android:layout_marginBottom="20dp"
 
         />
