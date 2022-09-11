@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:layout_width="330dp"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/do_you_want_to_exit"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="RtlHardcoded">
+
+        <TextView
+            android:id="@+id/NoID"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:text="@string/no"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginRight="40dp"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:background="@drawable/yes_no_button_design"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+
+            />
+
+        <TextView
+            android:id="@+id/YesID"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:text="@string/yes"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:background="@drawable/yes_no_button_design"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -13,10 +13,12 @@ class MyOrderPage extends StatefulWidget {
 class _MyOrderPageState extends State<MyOrderPage> {
   @override
   Widget build(BuildContext context) {
-    Provider.of<OrderProvider>(context, listen: false).g
+    Provider.of<OrderProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(title: Text('My Orders'),),
-      body: ,
+      body: Center(
+        child: Text('No data'),
+      ),
     );
   }
 }

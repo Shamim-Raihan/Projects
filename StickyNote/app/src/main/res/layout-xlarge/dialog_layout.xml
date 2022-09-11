@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20sp"
+    >
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/color_label"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/color1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/view_backgraound_1"
+        android:gravity="center"
+        android:text="@string/emergency"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_below="@id/label"
+        />
+
+    <TextView
+        android:id="@+id/color2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/color1"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/view_backgraound_2"
+        android:gravity="center"
+        android:text="@string/under_development"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/color3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/view_backgraound_3"
+        android:layout_below="@id/color2"
+        android:text="@string/daily_routine"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/color4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/view_backgraound_4"
+        android:layout_below="@id/color3"
+        android:text="@string/professional"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/color5"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/view_backgraound_5"
+        android:layout_below="@id/color4"
+        android:text="@string/life_goal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/color6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/view_backgraound_6"
+        android:layout_below="@id/color5"
+        android:text="@string/creativity"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        />
+</RelativeLayout>

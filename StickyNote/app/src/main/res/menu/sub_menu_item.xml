@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Sort by color"
+        android:id="@+id/submenu_sort_by_color" />
+    <item android:title="sort by date ascending"
+        android:id="@+id/submenu_sort_by_ascending" />
+    <item android:title="sort by date descending"
+        android:id="@+id/submenu_sort_by_descending"/>
+</menu>

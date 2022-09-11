@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Sticky Note</string>
+    <string name="title">Title</string>
+    <string name="note">Note</string>
+    <string name="floatingactionbutton">floatingActionButton</string>
+    <string name="color_label">Color Label</string>
+    <string name="emergency">Emergency</string>
+    <string name="under_development">Under Development</string>
+    <string name="daily_routine">Daily Routine</string>
+    <string name="professional">Professional</string>
+    <string name="life_goal">Life Goal</string>
+    <string name="creativity">Creativity</string>
+    <string name="my_first_note">My First Note</string>
+    <string name="date">date</string>
+    <string name="time">time</string>
+    <string name="note_description">note description</string>
+    <string name="colorimage">colorImage</string>
+    <string name="do_you_want_to_exit">Do you want to Exit ?</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="do_you_want_to_delete">Do you want to delete?</string>
+</resources>
