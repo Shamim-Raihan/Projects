@@ -1,4 +1,5 @@
 import 'package:ecom_admin_batch5/auth/auth_service.dart';
+import 'package:ecom_admin_batch5/page/dashboard_page.dart';
 import 'package:ecom_admin_batch5/page/launcher_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -112,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
       try {
         final status = await AuthService.login(emailController.text, passController.text);
         if(status) {
-          Navigator.pushReplacementNamed(context, LauncherPage.routeName);
+          Navigator.pushReplacementNamed(context, DashboardPage.routeName);
         } else {
           AuthService.logout();
           setState(() {

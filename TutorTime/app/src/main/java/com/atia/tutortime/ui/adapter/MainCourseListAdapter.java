@@ -82,7 +82,12 @@ public class MainCourseListAdapter extends RecyclerView.Adapter<MainCourseListAd
                     intent.putExtra("courseId", courses.getcId());
                     intent.putExtra("requestList", courses.getRequestList());
                     intent.putExtra("courseFee", courses.getCourseFee());
+                    intent.putExtra("liveClass", courses.getLiveClass());
+                    intent.putExtra("modelTest", courses.getModelTest());
+                    intent.putExtra("notes", courses.getNotes());
+                    intent.putExtra("finalExam", courses.getFinalExam());
                     context.startActivity(intent);
+                    courseList.clear();
                 }
             });
         }

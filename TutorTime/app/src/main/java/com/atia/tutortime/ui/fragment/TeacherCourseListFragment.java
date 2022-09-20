@@ -64,7 +64,6 @@ public class TeacherCourseListFragment extends Fragment {
 
             }
         });
-
         return view;
     }
 }

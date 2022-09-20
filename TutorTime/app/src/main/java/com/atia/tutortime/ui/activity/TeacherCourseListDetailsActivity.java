@@ -20,7 +20,7 @@ public class TeacherCourseListDetailsActivity extends AppCompatActivity {
     private Courses courses;
 
     private TextView courseNameTv, courseTeacherTv, courseTotalSeatTv, courseAvailableSeatTv, courseStartTimeTv, courseEndTimeTv, courseClassTv, courseMediaTv, teacherContactTv;
-    private TextView platformLink;
+    private TextView platformLink, liveClassTv, modelTestTv, notesTv, finalExamTv;
 
     FirebaseAuth mAuth;
     DatabaseReference teacherRef;
@@ -43,6 +43,10 @@ public class TeacherCourseListDetailsActivity extends AppCompatActivity {
         teacherContactTv = findViewById(R.id.booked_teacher_contact_id);
         teacherContactTv = findViewById(R.id.booked_teacher_contact_id);
         platformLink = findViewById(R.id.booked_platform_link_id);
+        liveClassTv = findViewById(R.id.booked_live_class_id);
+        modelTestTv = findViewById(R.id.booked_model_test_id);
+        notesTv = findViewById(R.id.booked_notes_id);
+        finalExamTv = findViewById(R.id.booked_final_exam_id);
 
         mAuth = FirebaseAuth.getInstance();
         teacherRef = FirebaseDatabase.getInstance().getReference("users");
@@ -62,6 +66,10 @@ public class TeacherCourseListDetailsActivity extends AppCompatActivity {
         courseClassTv.setText(courses.getcClass());
         courseMediaTv.setText(courses.getMedia());
         platformLink.setText(courses.getPlatformAddress());
+        liveClassTv.setText(courses.getLiveClass());
+        modelTestTv.setText(courses.getModelTest());
+        notesTv.setText(courses.getNotes());
+        finalExamTv.setText(courses.getFinalExam());
 
         teacherRef.addValueEventListener(new ValueEventListener() {
             @Override

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.atia.tutortime.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         singInButton = findViewById(R.id.sign_in_btn_id);
 
         mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut();
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -90,44 +92,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        firebaseUser = mAuth.getCurrentUser();
-        if (firebaseUser != null && firebaseUser.isEmailVerified()) {
-            alertDialog.show();
-            databaseReference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    alertDialog.dismiss();
-                    finish();
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                }
-            });
-        }
-        if (firebaseUser != null && !firebaseUser.isEmailVerified()) {
-            alertDialog.show();
-            databaseReference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String status = snapshot.child(mAuth.getUid()).child("status").getValue(String.class);
-                    Intent intent = new Intent(MainActivity.this, EmailVerificationActivity.class);
-                    intent.putExtra("status", status);
-                    startActivity(intent);
-                    finish();
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-        } else {
-
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        firebaseUser = mAuth.getCurrentUser();
+//        if (firebaseUser != null && firebaseUser.isEmailVerified()) {
+//            alertDialog.show();
+//            databaseReference.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    alertDialog.dismiss();
+//                    finish();
+//                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//                    startActivity(intent);
+//                }
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//                }
+//            });
+//        }
+//        else if (firebaseUser != null && !firebaseUser.isEmailVerified()) {
+//            alertDialog.show();
+//            databaseReference.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    String status = snapshot.child(mAuth.getUid()).child("status").getValue(String.class);
+//                    alertDialog.dismiss();
+//                    Intent intent = new Intent(MainActivity.this, EmailVerificationActivity.class);
+//                    intent.putExtra("status", status);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+//        }
+//    }
 }

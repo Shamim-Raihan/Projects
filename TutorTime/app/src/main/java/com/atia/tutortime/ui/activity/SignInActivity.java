@@ -25,6 +25,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -36,6 +43,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private AlertDialog alertDialog;
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +64,7 @@ public class SignInActivity extends AppCompatActivity {
         builder.setCancelable(false);
         alertDialog = builder.create();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
         forgetPasswordTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,15 +135,39 @@ public class SignInActivity extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (mAuth.getCurrentUser().isEmailVerified()){
-                            alertDialog.dismiss();
-                            finish();
-                            Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-                            startActivity(intent);
+                        if(task.isSuccessful()){
+                            if (mAuth.getCurrentUser().isEmailVerified()){
+                                databaseReference.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String status = snapshot.child(mAuth.getUid()).child("status").getValue(String.class);
+                                        alertDialog.dismiss();
+                                        Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+                                        intent.putExtra("status", status);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                            }
+                            else {
+                                Toast.makeText(SignInActivity.this, "Please verify your email address.", Toast.LENGTH_SHORT).show();
+                                alertDialog.dismiss();
+                            }
                         }
-                        else {
-                            Toast.makeText(SignInActivity.this, "Please verify your email address.", Toast.LENGTH_SHORT).show();
-                            alertDialog.dismiss();
+                        if(!task.isSuccessful()){
+                            try {
+                                throw  task.getException();
+                            }
+                            catch (FirebaseAuthInvalidCredentialsException existEmail){
+                                Toast.makeText(SignInActivity.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
+                                alertDialog.dismiss();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 });

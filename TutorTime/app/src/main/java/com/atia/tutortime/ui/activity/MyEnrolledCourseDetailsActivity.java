@@ -24,6 +24,7 @@ public class MyEnrolledCourseDetailsActivity extends AppCompatActivity {
     private ArrayList<Courses> coursesList;
     private ArrayList<Teacher> teacherList;
     private TextView courseNameTv, courseTeacherTv, courseTotalSeatTv, courseAvailableSeatTv, courseStartTimeTv, courseEndTimeTv, courseClassTv, courseMediaTv, courseFeeTv, addressTv;
+    private TextView liveClassTv, modelTestTv, notesTv, finalExamTv;
     private Courses courses;
     private Teacher teacher;
 
@@ -44,6 +45,10 @@ public class MyEnrolledCourseDetailsActivity extends AppCompatActivity {
         courseMediaTv = findViewById(R.id.my_media_id);
         courseFeeTv = findViewById(R.id.my_course_fee_id);
         addressTv = findViewById(R.id.my_course_address_id);
+        liveClassTv = findViewById(R.id.my_course_live_class_id);
+        modelTestTv = findViewById(R.id.my_course_model_test_id);
+        notesTv = findViewById(R.id.my_course_notes_id);
+        finalExamTv = findViewById(R.id.my_course_final_exam_id);
 
         courseRef = FirebaseDatabase.getInstance().getReference("course");
         userRef = FirebaseDatabase.getInstance().getReference("users");
@@ -82,6 +87,10 @@ public class MyEnrolledCourseDetailsActivity extends AppCompatActivity {
                         courseMediaTv.setText(courses.getMedia());
                         courseFeeTv.setText(courses.getCourseFee());
                         addressTv.setText(courses.getPlatformAddress());
+                        liveClassTv.setText(courses.getLiveClass());
+                        modelTestTv.setText(courses.getModelTest());
+                        notesTv.setText(courses.getNotes());
+                        finalExamTv.setText(courses.getFinalExam());
                     }
 
                     @Override

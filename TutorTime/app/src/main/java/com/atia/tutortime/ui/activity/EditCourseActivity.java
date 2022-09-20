@@ -35,9 +35,9 @@ import java.util.HashMap;
 
 public class EditCourseActivity extends AppCompatActivity {
 
-    private EditText editCourseNameEd, editStartTimeEd, editEndTimeEd, editPlatformLinkEd, editSeatNumberEd, editCourseFeeEd;
-    private RadioGroup editRadioGroup;
-    private RadioButton editOnlineRB, editOfflineRB;
+    private EditText editCourseNameEd, editStartTimeEd, editEndTimeEd, editPlatformLinkEd, editSeatNumberEd, editCourseFeeEd, editLiveClassEd, editModelTestEd, editNotesEd;
+    private RadioGroup editRadioGroup,editFinalExamRadioGroup;
+    private RadioButton editOnlineRB, editOfflineRB, editYesRB, editNoRB;
     private NumberPicker editClassNumberPicker;
     private Button editCourseButton;
     private ImageView startTimePicker, endTimePicker;
@@ -46,10 +46,11 @@ public class EditCourseActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
 
-    private String getCourseName, getStartTime, getEndTime, getPlatformAddress, getSeatNumber, getMedia, getClassNumber, getCourseId, getCourseFee, getAvailableSeat;
+    private String getCourseName, getStartTime, getEndTime, getPlatformAddress, getSeatNumber, getMedia, getClassNumber, getCourseId, getCourseFee, getAvailableSeat, getLiveClass, getModelTest, getNotes, getFinalExam;
 
 
-    private String newCourseName, newStartTime, newEndTime, newPlatformAddress, newSeatNumber, newMedia, newCourseFee;
+
+    private String newCourseName, newStartTime, newEndTime, newPlatformAddress, newSeatNumber, newMedia, newCourseFee, newLiveClass, newModelTest, newNotes, newFinalExam;
     private int newClassNumber;
     private AlertDialog alertDialog;
 
@@ -79,6 +80,13 @@ public class EditCourseActivity extends AppCompatActivity {
         editClassNumberPicker = findViewById(R.id.edit_course_class_picker_id);
         editCourseFeeEd = findViewById(R.id.edit_course_fee_id);
 
+        editLiveClassEd = findViewById(R.id.edit_course_live_class_id);
+        editModelTestEd = findViewById(R.id.edit_course_model_test_id);
+        editNotesEd = findViewById(R.id.edit_course_notes_id);
+        editFinalExamRadioGroup = findViewById(R.id.edit_course_final_exam_radio_group_id);
+        editYesRB = findViewById(R.id.edit_course_final_exam_yes_id);
+        editNoRB = findViewById(R.id.edit_course_final_exam_no_id);
+
 
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("course");
@@ -97,6 +105,10 @@ public class EditCourseActivity extends AppCompatActivity {
             getCourseId = bundle.getString("courseId");
             getCourseFee = bundle.getString("courseFee");
             getAvailableSeat = bundle.getString("availableSeat");
+            getLiveClass = bundle.getString("liveClass");
+            getModelTest = bundle.getString("modelTest");
+            getNotes = bundle.getString("notes");
+            getFinalExam = bundle.getString("finalExam");
         }
 
         newCourseName = getCourseName;
@@ -107,7 +119,10 @@ public class EditCourseActivity extends AppCompatActivity {
         newMedia = getMedia;
         newClassNumber = Integer.parseInt(getClassNumber);
         newCourseFee = getCourseFee;
-
+        newLiveClass = getLiveClass;
+        newModelTest = getModelTest;
+        newNotes = getNotes;
+        newFinalExam = getFinalExam;
 
         editCourseNameEd.setText(getCourseName);
         editStartTimeEd.setText(getStartTime);
@@ -115,11 +130,20 @@ public class EditCourseActivity extends AppCompatActivity {
         editPlatformLinkEd.setText(getPlatformAddress);
         editCourseFeeEd.setText(getCourseFee);
         editSeatNumberEd.setText(getSeatNumber);
+        editLiveClassEd.setText(getLiveClass);
+        editModelTestEd.setText(getModelTest);
+        editNotesEd.setText(getNotes);
 
         if (getMedia.equals("online")) {
             editOnlineRB.setChecked(true);
         } else if (getMedia.equals("offline")) {
             editOfflineRB.setChecked(true);
+        }
+
+        if (getFinalExam.equals("yes")) {
+            editYesRB.setChecked(true);
+        } else if (getFinalExam.equals("no")) {
+            editNoRB.setChecked(true);
         }
 
         if (editClassNumberPicker != null) {
@@ -169,6 +193,9 @@ public class EditCourseActivity extends AppCompatActivity {
                         newPlatformAddress = editPlatformLinkEd.getText().toString();
                         newSeatNumber = editSeatNumberEd.getText().toString();
                         newCourseFee = editCourseFeeEd.getText().toString();
+                        newLiveClass = editLiveClassEd.getText().toString();
+                        newModelTest = editModelTestEd.getText().toString();
+                        newNotes = editNotesEd.getText().toString();
 
                         int seatDifference = Integer.parseInt(newSeatNumber) - Integer.parseInt(getSeatNumber);
                         int updateAvailableSeat = seatDifference + Integer.parseInt(getAvailableSeat);
@@ -183,6 +210,10 @@ public class EditCourseActivity extends AppCompatActivity {
                         updateCourse.put("courseFee", newCourseFee);
                         updateCourse.put("cClass", String.valueOf(newClassNumber));
                         updateCourse.put("availableSeat", String.valueOf(updateAvailableSeat));
+                        updateCourse.put("liveClass", newLiveClass);
+                        updateCourse.put("modelTest", newModelTest);
+                        updateCourse.put("notes", newNotes);
+                        updateCourse.put("finalExam", newFinalExam);
 
                         databaseReference.child(getCourseId).updateChildren(updateCourse).addOnCompleteListener(new OnCompleteListener() {
                             @Override

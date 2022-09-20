@@ -37,9 +37,9 @@ import java.util.Calendar;
 public class AddNewCourseActivity extends AppCompatActivity {
 
 
-    private EditText courseNameEd, startTimeEd, endTimeEd, platformLinkEd, seatNumberEd, courseFeeEd;
-    private RadioGroup mediaRadioGroup;
-    private RadioButton onlineRB, offlineRB;
+    private EditText courseNameEd, startTimeEd, endTimeEd, platformLinkEd, seatNumberEd, courseFeeEd, liveClassEd, modelTestEd, notesEd;
+    private RadioGroup mediaRadioGroup, finalExamRadioGroup;
+    private RadioButton onlineRB, offlineRB, yesRB, noRB;
     private NumberPicker classPicker;
     private Button addCourseButton;
     private ImageView startTimePicker, endTimePicker;
@@ -53,9 +53,9 @@ public class AddNewCourseActivity extends AppCompatActivity {
     String studentList = "";
     String requeatList = "";
     String finishedStatus = "On Going";
-
     FirebaseAuth mAuth;
     private AlertDialog alertDialog;
+    private String finalExam = "null";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +67,6 @@ public class AddNewCourseActivity extends AppCompatActivity {
         builder.setView(inflater.inflate(R.layout.loading_dialog_box, null));
         builder.setCancelable(false);
         alertDialog = builder.create();
-
-
 
         courseNameEd = findViewById(R.id.add_course_name_id);
         startTimeEd = findViewById(R.id.add_course_start_time_id);
@@ -85,7 +83,12 @@ public class AddNewCourseActivity extends AppCompatActivity {
         platformLinkTv = findViewById(R.id.add_course_platform_link_tv_id);
         locationAddressTv = findViewById(R.id.add_course_loacation_address_tv_id);
         courseFeeEd = findViewById(R.id.add_course_fee_id);
-
+        liveClassEd = findViewById(R.id.add_course_live_class_id);
+        modelTestEd = findViewById(R.id.add_course_model_test_id);
+        notesEd = findViewById(R.id.add_course_notes_id);
+        finalExamRadioGroup = findViewById(R.id.add_course_final_exam_radio_group_id);
+        yesRB = findViewById(R.id.add_course_final_exam_yes_id);
+        noRB = findViewById(R.id.add_course_final_exam_no_id);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("course");
         mAuth = FirebaseAuth.getInstance();
@@ -156,6 +159,20 @@ public class AddNewCourseActivity extends AppCompatActivity {
             }
         });
 
+        finalExamRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.add_course_final_exam_yes_id:
+                        finalExam = "yes";
+                        break;
+                    case R.id.add_course_final_exam_no_id:
+                        finalExam = "no";
+                        break;
+                }
+            }
+        });
+
 
         if(classPicker != null){
             classPicker.setMinValue(5);
@@ -193,6 +210,10 @@ public class AddNewCourseActivity extends AppCompatActivity {
                         String platformLink = platformLinkEd.getText().toString();
                         String seatNumber = seatNumberEd.getText().toString();
                         String courseFee = courseFeeEd.getText().toString();
+                        String liveClass = liveClassEd.getText().toString();
+                        String modelTest = liveClassEd.getText().toString();
+                        String notes = notesEd.getText().toString();
+
 
                         if(courseName.isEmpty()){
                             courseNameEd.setError("Enter course name");
@@ -224,8 +245,23 @@ public class AddNewCourseActivity extends AppCompatActivity {
                             courseFeeEd.requestFocus();
                             return;
                         }
+                        if(liveClass.isEmpty()){
+                            liveClassEd.setError("Enter number of live class");
+                            liveClassEd.requestFocus();
+                            return;
+                        }
+                        if(modelTest.isEmpty()){
+                            modelTestEd.setError("Enter number of model test");
+                            modelTestEd.requestFocus();
+                            return;
+                        }
+                        if(notes.isEmpty()){
+                            notesEd.setError("Enter number of notes");
+                            notesEd.requestFocus();
+                            return;
+                        }
 
-                        addnewCourse(courseName, startTime, endTime, platformLink, seatNumber, courseFee);
+                        addnewCourse(courseName, startTime, endTime, platformLink, seatNumber, courseFee, liveClass, modelTest, notes);
                     }
                 });
 
@@ -240,14 +276,14 @@ public class AddNewCourseActivity extends AppCompatActivity {
         });
     }
 
-    private void addnewCourse(String courseName, String startTime, String endTime, String platformLink, String seatNumber, String courseFee) {
+    private void addnewCourse(String courseName, String startTime, String endTime, String platformLink, String seatNumber, String courseFee, String liveClass, String modelTest, String notes) {
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String id = databaseReference.push().getKey();
                 avialableSeat = seatNumber;
-                Courses courses = new Courses(courseName, String.valueOf(classNumber), startTime, endTime, media, platformLink, seatNumber, avialableSeat, studentList, requeatList, finishedStatus, id, mAuth.getUid(), courseFee);
+                Courses courses = new Courses(courseName, String.valueOf(classNumber), startTime, endTime, media, platformLink, seatNumber, avialableSeat, studentList, requeatList, finishedStatus, id, mAuth.getUid(), courseFee,liveClass, modelTest, notes, finalExam);
                 databaseReference.child(id).setValue(courses);
                 alertDialog.dismiss();
                 Toast.makeText(AddNewCourseActivity.this, "Course added", Toast.LENGTH_SHORT).show();

@@ -33,8 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/bottomNavigationId"
-            android:layout_below="@id/toolbarId"
-            />
+            android:layout_below="@id/toolbarId" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationId"

@@ -106,9 +106,12 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.my
                     intent.putExtra("courseId", courses.getcId());
                     intent.putExtra("courseFee", courses.getCourseFee());
                     intent.putExtra("availableSeat", courses.getAvailableSeat());
-
-
+                    intent.putExtra("liveClass", courses.getLiveClass());
+                    intent.putExtra("modelTest", courses.getModelTest());
+                    intent.putExtra("notes", courses.getNotes());
+                    intent.putExtra("finalExam", courses.getFinalExam());
                     context.startActivity(intent);
+                    courseList.clear();
                 }
             });
 

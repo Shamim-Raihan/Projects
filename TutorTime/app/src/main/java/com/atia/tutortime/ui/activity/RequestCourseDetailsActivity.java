@@ -9,10 +9,10 @@ import com.atia.tutortime.R;
 
 public class RequestCourseDetailsActivity extends AppCompatActivity {
 
-    private String availabeSeat, courseClass, courseName, endTime, media, startTime, totalSeat, teacherName, teacherContact, status;
+    private String availabeSeat, courseClass, courseName, endTime, media, startTime, totalSeat, teacherName, teacherContact, status, liveClass, modelTest, notes, finalExam;
 
     private TextView courseNameTv, courseTeacherTv, courseTotalSeatTv, courseAvailableSeatTv, courseStartTimeTv, courseEndTimeTv, courseClassTv, courseMediaTv, teacherContactTv;
-    private TextView statusTv;
+    private TextView statusTv, liveClassTv, modelTestTv, notesTv, finalExamTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,10 @@ public class RequestCourseDetailsActivity extends AppCompatActivity {
         courseMediaTv = findViewById(R.id.request_media_id);
         teacherContactTv = findViewById(R.id.request_course_teacher_contact_id);
         statusTv = findViewById(R.id.request_status_id);
+        liveClassTv = findViewById(R.id.request_live_class_id);
+        modelTestTv = findViewById(R.id.request_model_test_id);
+        notesTv = findViewById(R.id.request_notes_id);
+        finalExamTv = findViewById(R.id.request_final_exam_id);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -44,6 +48,10 @@ public class RequestCourseDetailsActivity extends AppCompatActivity {
             teacherName = bundle.getString("teacherName");
             teacherContact = bundle.getString("teacherContact");
             status = bundle.getString("status");
+            liveClass = bundle.getString("liveClass");
+            modelTest = bundle.getString("modelTest");
+            notes = bundle.getString("notes");
+            finalExam = bundle.getString("finalExam");
         }
 
         courseNameTv.setText(courseName);
@@ -56,5 +64,9 @@ public class RequestCourseDetailsActivity extends AppCompatActivity {
         courseMediaTv.setText(media);
         teacherContactTv.setText(teacherContact);
         statusTv.setText(status);
+        liveClassTv.setText(liveClass);
+        modelTestTv.setText(modelTest);
+        notesTv.setText(notes);
+        finalExamTv.setText(finalExam);
     }
 }

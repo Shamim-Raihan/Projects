@@ -5,8 +5,9 @@ import java.io.Serializable;
 public class Courses implements Serializable {
 
     String courseName, cClass, startDate, endDate, media, platformAddress, totalSeat, availableSeat, studentList, requestList, finishedStatus, cId, teacherId, courseFee;
+    String liveClass, modelTest, notes, finalExam;
 
-    public Courses(String courseName, String cClass, String startDate, String endDate, String media, String platformAddress, String totalSeat, String availableSeat, String studentList, String requestList, String finishedStatus, String cId, String teacherId, String courseFee) {
+    public Courses(String courseName, String cClass, String startDate, String endDate, String media, String platformAddress, String totalSeat, String availableSeat, String studentList, String requestList, String finishedStatus, String cId, String teacherId, String courseFee, String liveClass, String modelTest, String notes, String finalExam) {
         this.courseName = courseName;
         this.cClass = cClass;
         this.startDate = startDate;
@@ -21,6 +22,10 @@ public class Courses implements Serializable {
         this.cId = cId;
         this.teacherId = teacherId;
         this.courseFee = courseFee;
+        this.liveClass = liveClass;
+        this.modelTest = modelTest;
+        this.notes = notes;
+        this.finalExam = finalExam;
     }
 
     public Courses() {
@@ -136,5 +141,37 @@ public class Courses implements Serializable {
 
     public void setCourseFee(String courseFee) {
         this.courseFee = courseFee;
+    }
+
+    public String getLiveClass() {
+        return liveClass;
+    }
+
+    public void setLiveClass(String liveClass) {
+        this.liveClass = liveClass;
+    }
+
+    public String getModelTest() {
+        return modelTest;
+    }
+
+    public void setModelTest(String modelTest) {
+        this.modelTest = modelTest;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public String getFinalExam() {
+        return finalExam;
+    }
+
+    public void setFinalExam(String finalExam) {
+        this.finalExam = finalExam;
     }
 }

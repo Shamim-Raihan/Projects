@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorTime">
         <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.TeacherCourseListDetailsActivity"
             android:exported="false" />
         <activity
@@ -66,7 +69,7 @@
             android:name=".ui.activity.SignInActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.activity.LaunchingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

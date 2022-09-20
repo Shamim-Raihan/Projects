@@ -63,6 +63,41 @@
         <entry key="..\:/Android/Client Projects/TutorTime/app/src/main/res/drawable/layout_style.xml" value="0.17692307692307693" />
         <entry key="..\:/Android/Client Projects/TutorTime/app/src/main/res/font/font.xml" value="0.18595317725752508" />
         <entry key="..\:/Android/Client Projects/TutorTime/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/drawable/search_box_style.xml" value="0.163" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_add_new_course.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_edit_course.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_every_teacher_course_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_home.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_main.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_main_course_details.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_my_enrolled_course_details.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_request_course_details.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_sign_in.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_student_course_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_student_edit_profile.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_student_profile.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_student_register.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_teacher_course_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_teacher_course_list_details.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_teacher_edit_profile.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_teacher_profile.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/activity_teacher_register.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/check_internet_dialog.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/course_list_item.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/enrollment_message.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_enroll_request.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_my_courses.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_offline_courses.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_teacher_course_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_teacher_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/fragment_teacher_request_list.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/header_layout.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/loading_dialog_box.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/main_course_list_items.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/requested_course_list_item.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/role_selection_pop_up.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/student_course_list_item.xml" value="0.16824324324324325" />
+        <entry key="..\:/Projects/TutorTime/app/src/main/res/layout/teacher_list_item.xml" value="0.16824324324324325" />
       </map>
     </option>
   </component>

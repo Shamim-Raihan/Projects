@@ -24,18 +24,18 @@
         android:layout_below="@id/header_profileImage_id"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="Shamim Raihan"
+        android:text=""
         android:textColor="@color/textColorWhite"
         android:textSize="20dp" />
+
     <TextView
         android:id="@+id/header_email_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="shamimraihan91@gmail.com"
         android:layout_below="@id/header_username_id"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:text=""
         android:textColor="@color/textColorWhite"
-        android:textSize="14sp"
-        />
+        android:textSize="12sp" />
 </RelativeLayout>

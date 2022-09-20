@@ -36,6 +36,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -247,6 +248,17 @@ public class TeacherRegisterActivity extends AppCompatActivity {
                         }
                     });
                 }
+                if(!task.isSuccessful()){
+                    try {
+                        throw  task.getException();
+                    }
+                    catch (FirebaseAuthUserCollisionException existEmail){
+                        Toast.makeText(TeacherRegisterActivity.this, "Email Already Taken", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
                 else {
                     Toast.makeText(getApplicationContext(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
                 }
@@ -268,6 +280,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
                         mAuth.signOut();
                         alertDialog.dismiss();
                         Intent intent = new Intent(TeacherRegisterActivity.this, EmailVerificationActivity.class);
+                        intent.putExtra("email", email);
                         startActivity(intent);
                         finish();
                     }

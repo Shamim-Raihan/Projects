@@ -244,11 +244,106 @@
                 android:id="@+id/add_course_fee_id"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Number of seat"
+                android:hint="Course fee"
                 android:paddingLeft="15dp"
                 android:background="@drawable/edit_text_background_design"
                 android:layout_marginBottom="40dp"
                 />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Live class"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/add_course_live_class_id"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Number of live class"
+                android:paddingLeft="15dp"
+                android:background="@drawable/edit_text_background_design"
+                android:layout_marginBottom="40dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Special model test"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/add_course_model_test_id"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Number of model test"
+                android:paddingLeft="15dp"
+                android:background="@drawable/edit_text_background_design"
+                android:layout_marginBottom="40dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/add_course_notes_id"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Number of Notes"
+                android:paddingLeft="15dp"
+                android:background="@drawable/edit_text_background_design"
+                android:layout_marginBottom="40dp"
+                />
+
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final Exam"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/add_course_final_exam_radio_group_id"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/add_course_final_exam_yes_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:layout_marginRight="20dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/add_course_final_exam_no_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Offline"
+                        />
+                </RadioGroup>
+            </LinearLayout>
+
 
             <Button
                 android:id="@+id/add_course_button_id"

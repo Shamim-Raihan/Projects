@@ -37,6 +37,8 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
@@ -74,6 +76,52 @@ public class HomeActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutId, new OfflineCoursesFragment()).commit();
         }
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            status = bundle.getString("status");
+        }
+
+        if (status.equals("teacher")) {
+            databaseReference.orderByChild("uid").equalTo(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        teacher = dataSnapshot.getValue(Teacher.class);
+                        username.setText(teacher.getName());
+                        email.setText(teacher.getEmail());
+                        Picasso.get()
+                                .load(teacher.getProfilePhoto())
+                                .into(profileImage);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        if (status.equals("student")) {
+            databaseReference.orderByChild("uid").equalTo(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        student = dataSnapshot.getValue(Student.class);
+                        username.setText(student.getName());
+                        email.setText(student.getEmail());
+                        Picasso.get()
+                                .load(student.getProfilePhoto())
+                                .into(profileImage);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, myToolbar, R.string.open_navigation_drawer, R.string.close_navigation_drawer);
         drawerLayout.addDrawerListener(toggle);
@@ -83,16 +131,16 @@ public class HomeActivity extends AppCompatActivity {
         username = view.findViewById(R.id.header_username_id);
         email = view.findViewById(R.id.header_email_id);
 
+
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(status.equals("teacher")){
+                if (status.equals("teacher")) {
                     Intent intent = new Intent(HomeActivity.this, TeacherProfileActivity.class);
                     intent.putExtra("teacherId", mAuth.getUid());
                     intent.putExtra("from", "home");
                     startActivity(intent);
-                }
-                else {
+                } else {
                     Intent intent = new Intent(HomeActivity.this, StudentProfileActivity.class);
                     startActivity(intent);
                 }
@@ -102,12 +150,11 @@ public class HomeActivity extends AppCompatActivity {
         username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (status.equals("teacher")){
+                if (status.equals("teacher")) {
 
-                    Toast.makeText(HomeActivity.this, ""+teacher.getName(), Toast.LENGTH_SHORT).show();
-                }
-                else if(status.equals("student")){
-                    Toast.makeText(HomeActivity.this, ""+student.getName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "" + teacher.getName(), Toast.LENGTH_SHORT).show();
+                } else if (status.equals("student")) {
+                    Toast.makeText(HomeActivity.this, "" + student.getName(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -139,13 +186,12 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent1 = null;
                 Intent intent2 = null;
 
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.my_profile_id:
-                        if (status.equals("student")){
+                        if (status.equals("student")) {
                             intent = new Intent(HomeActivity.this, StudentProfileActivity.class);
                             startActivity(intent);
-                        }
-                        else {
+                        } else {
                             intent = new Intent(HomeActivity.this, TeacherProfileActivity.class);
                             intent.putExtra("teacherId", mAuth.getUid());
                             intent.putExtra("from", "home");
@@ -154,11 +200,10 @@ public class HomeActivity extends AppCompatActivity {
 
                         break;
                     case R.id.courses_id:
-                        if (status.equals("student")){
+                        if (status.equals("student")) {
                             intent1 = new Intent(HomeActivity.this, StudentCourseListActivity.class);
                             startActivity(intent1);
-                        }
-                        else {
+                        } else {
                             intent1 = new Intent(HomeActivity.this, TeacherCourseListActivity.class);
                             startActivity(intent1);
                         }
@@ -183,36 +228,5 @@ public class HomeActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        firebaseUser = mAuth.getCurrentUser();
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                status = snapshot.child(mAuth.getUid()).child("status").getValue(String.class);
-                if (status.equals("teacher")) {
-                    teacher = snapshot.child(mAuth.getUid()).getValue(Teacher.class);
-                    Picasso.get()
-                            .load(teacher.getProfilePhoto())
-                            .into(profileImage);
-                    username.setText(teacher.getName());
-                    email.setText(teacher.getEmail());
-                }
-                if (status.equals("student")) {
-                    student = snapshot.child(mAuth.getUid()).getValue(Student.class);
-                    Picasso.get()
-                            .load(student.getProfilePhoto())
-                            .into(profileImage);
-                    username.setText(student.getName());
-                    email.setText(student.getEmail());
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
     }
 }

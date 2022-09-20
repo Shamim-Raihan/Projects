@@ -2,6 +2,7 @@ package com.atia.tutortime.ui.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.BundleCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private TextView verificationEmail;
+    private String getEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,21 @@ public class EmailVerificationActivity extends AppCompatActivity {
         user = mAuth.getCurrentUser();
         verificationEmail = findViewById(R.id.verification_email_id);
 
-        verificationEmail.setText(user.getEmail());
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            getEmail = bundle.getString("email");
+        }
+
+        verificationEmail.setText(getEmail);
+        if(mAuth.getCurrentUser() != null){
+            if (mAuth.getCurrentUser().isEmailVerified()) {
+                Intent intent = new Intent(EmailVerificationActivity.this, SignInActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+            }
+        }
+
 
         resendLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,4 +82,5 @@ public class EmailVerificationActivity extends AppCompatActivity {
             }
         });
     }
+
 }

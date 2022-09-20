@@ -93,7 +93,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                             .load(student.getProfilePhoto())
                             .into(profileImage);
                     profileName.setText(student.getName());
-                    profileClass.setText(String.valueOf(student.getsClass()));
+                    profileClass.setText("Class" + student.getsClass());
                     profileEmail.setText(student.getEmail());
                     profilePhone.setText(student.getPhone());
                     profileAge.setText(String.valueOf(student.getsAge()));

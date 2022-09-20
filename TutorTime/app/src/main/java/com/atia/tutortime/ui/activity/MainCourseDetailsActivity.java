@@ -33,13 +33,13 @@ import java.util.HashMap;
 
 public class MainCourseDetailsActivity extends AppCompatActivity {
 
-    private String availabeSeat, courseClass, courseName, endTime, media, startTime, totalSeat, teacherId, courseId, requestList, courseFee;
+    private String availabeSeat, courseClass, courseName, endTime, media, startTime, totalSeat, teacherId, courseId, requestList, courseFee, liveClass, modelTest, notes, finalExam;
     private FirebaseAuth mAuth;
     private DatabaseReference userDatabaseRef;
     private String teacherName;
     private Button enrollNowButton;
 
-    private TextView courseNameTv, courseTeacherTv, courseTotalSeatTv, courseAvailableSeatTv, courseStartTimeTv, courseEndTimeTv, courseClassTv, courseMediaTv;
+    private TextView courseNameTv, courseTeacherTv, courseTotalSeatTv, courseAvailableSeatTv, courseStartTimeTv, courseEndTimeTv, courseClassTv, courseMediaTv, liveClassTv, modelTestTv, notesTv, finalExamTv;
     private DatabaseReference enrolledCourseRef;
     private DatabaseReference courseRef;
     private DatabaseReference enrollmentRef;
@@ -64,6 +64,10 @@ public class MainCourseDetailsActivity extends AppCompatActivity {
         courseMediaTv = findViewById(R.id.main_media_id);
         enrollNowButton = findViewById(R.id.main_enroll_now_id);
         courseFeeTv = findViewById(R.id.main_course_fee_id);
+        liveClassTv = findViewById(R.id.main_course_fee_id);
+        modelTestTv = findViewById(R.id.main_course_fee_id);
+        notesTv = findViewById(R.id.main_course_fee_id);
+        finalExamTv = findViewById(R.id.main_course_fee_id);
 
         userDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
         enrolledCourseRef = FirebaseDatabase.getInstance().getReference("enrolled_courses");
@@ -91,13 +95,17 @@ public class MainCourseDetailsActivity extends AppCompatActivity {
             courseId = bundle.getString("courseId");
             requestList = bundle.getString("requestList");
             courseFee = bundle.getString("courseFee");
+            liveClass = bundle.getString("liveClass");
+            modelTest = bundle.getString("modelTest");
+            notes = bundle.getString("notes");
+            finalExam = bundle.getString("finalExam");
         }
 
         userDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 teacherName = snapshot.child(teacherId).child("name").getValue(String.class);
-                courseTeacherTv.setText(teacherName);
+                courseTeacherTv.setText("Course Teacher: "+teacherName);
             }
 
             @Override
@@ -113,6 +121,10 @@ public class MainCourseDetailsActivity extends AppCompatActivity {
         courseClassTv.setText(courseClass);
         courseMediaTv.setText(media);
         courseFeeTv.setText(courseFee);
+        liveClassTv.setText(liveClass);
+        modelTestTv.setText(modelTest);
+        notesTv.setText(notes);
+        finalExamTv.setText(finalExam);
 
         enrollNowButton.setOnClickListener(new View.OnClickListener() {
             @Override

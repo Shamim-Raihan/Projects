@@ -99,6 +99,10 @@ public class RequestedCourseListAdapter extends RecyclerView.Adapter<RequestedCo
                             intent.putExtra("teacherName", teacherName);
                             intent.putExtra("teacherContact", teacherContact);
                             intent.putExtra("status", status);
+                            intent.putExtra("liveClass", courses.getLiveClass());
+                            intent.putExtra("modelTest", courses.getModelTest());
+                            intent.putExtra("notes", courses.getNotes());
+                            intent.putExtra("finalExam", courses.getFinalExam());
                             context.startActivity(intent);
                         }
 
